@@ -19,7 +19,6 @@ fakeroot
 file
 findutils
 firefox
-flatpak
 flex
 garcon
 gawk
@@ -34,6 +33,8 @@ grub
 gtk-engine-murrine
 guake
 gzip
+i3lock
+i3lockmore-git
 intel-ucode
 jdk8-openjdk
 junit
@@ -51,6 +52,7 @@ man-pages
 materia-gtk-theme
 minecraft-launcher
 mousepad
+mupdf
 neofetch
 network-manager-applet
 networkmanager
@@ -74,6 +76,7 @@ picom
 pkgconf
 powerline
 powerline-fonts
+powerline-go
 powerline-vim
 pulseaudio
 pulseaudio-alsa
@@ -149,7 +152,6 @@ xfce4-notifyd
 xfce4-panel
 xfce4-power-manager
 xfce4-pulseaudio-plugin
-xfce4-screensaver
 xfce4-screenshooter
 xfce4-sensors-plugin
 xfce4-session
@@ -221,4 +223,3 @@ yay
 zip
 zsh
 zsh-completions
-zsh-theme-powerlevel9k
