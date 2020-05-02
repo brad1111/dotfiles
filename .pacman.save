@@ -16,7 +16,7 @@ dhcpcd
 discord
 dnsmasq
 ebtables
-eclipse-java
+edk2-ovmf
 efibootmgr
 efitools
 ethtool
@@ -67,6 +67,7 @@ materia-gtk-theme
 mesa
 minecraft-launcher
 mousepad
+mplayer
 mupdf
 neofetch
 network-manager-applet
@@ -83,9 +84,9 @@ ntp
 openssh
 openvpn
 orage
-ovmf
 pacman
 pacman-contrib
+papirus-icon-theme
 parole
 patch
 pavucontrol
@@ -107,6 +108,7 @@ python-pygit2
 qemu
 rdesktop
 redshift
+refind
 ristretto
 rofi
 rofi-calc
