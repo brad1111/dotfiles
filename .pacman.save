@@ -69,6 +69,7 @@ mousepad
 mplayer
 mupdf
 neofetch
+neovim
 network-manager-applet
 networkmanager
 networkmanager-openconnect
@@ -96,7 +97,6 @@ plymouth-theme-arch-logo
 powerline
 powerline-fonts
 powerline-rs
-powerline-vim
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -104,6 +104,7 @@ pulseaudio-equalizer
 python-pip
 python-psutil
 python-pygit2
+python-pynvim
 qemu
 rdesktop
 redshift
@@ -149,7 +150,6 @@ ttf-ubuntu-font-family
 tumbler
 ufw
 unzip
-vim
 virt-manager
 vmware-horizon-client
 vulkan-intel
@@ -240,6 +240,7 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xsel
 yay
 zip
 zsh
