@@ -1,3 +1,7 @@
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
 plugins=(git)
 #Setup config file sync
 alias cfg='/usr/bin/git --git-dir=$HOME/src/archconfig --work-tree=$HOME'

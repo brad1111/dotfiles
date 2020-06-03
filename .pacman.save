@@ -1,3 +1,4 @@
+alacritty
 alsa-tools
 alsa-utils
 ant
@@ -123,6 +124,7 @@ seahorse
 sed
 simplescreenrecorder
 smartmontools
+snap-pac
 snapper
 spotify
 sudo
@@ -156,10 +158,12 @@ ufw
 unzip
 vala
 vala-panel-appmenu-common-git
+vala-panel-appmenu-registrar-git
 vala-panel-appmenu-xfce-git
 virt-manager
 vmware-horizon-client
 vulkan-intel
+wget
 which
 whois
 xclip
