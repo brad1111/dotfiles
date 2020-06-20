@@ -1,4 +1,3 @@
-alacritty
 alsa-tools
 alsa-utils
 ant
@@ -29,7 +28,6 @@ fakeroot
 file
 findutils
 firefox
-flatpak
 flex
 fuse2
 garcon
@@ -43,8 +41,8 @@ gradle
 grep
 groff
 gtk-engine-murrine
-guake
 gzip
+htop
 i3lock
 imagemagick
 intel-ucode
