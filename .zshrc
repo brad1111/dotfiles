@@ -13,8 +13,7 @@ prompt_powerline() {
 }
 
 prompt_default() {
-	PS1="%F{green}$(whoami)@$(hostname)%F{white}:%F{cyan}%~%F{white}$"
-
+	PS1="%F{green}$(whoami)@$(hostname)%F{white}:%F{cyan}%~%F{white}$ "
 }
 if [[ $(tty | grep tty) == "" ]]; then
     TTY=0
