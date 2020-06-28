@@ -27,7 +27,13 @@ else
     POWERLINE=0
 fi
 
-if [[ $TTY -eq 0 && POWERLINE -eq 1 ]]; then
+if [[ $WSLENV != "" ]]; then
+    WSL=1
+else
+    WSL=0
+fi
+
+if [[ ($TTY -eq 0 || $WSL -eq 1)  && POWERLINE -eq 1 ]]; then
     precmd_functions+=(prompt_powerline)
 else
     precmd_functions+=(prompt_default)
