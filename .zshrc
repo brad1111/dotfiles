@@ -38,3 +38,9 @@ if [[ ($TTY -eq 0 || $WSL -eq 1)  && POWERLINE -eq 1 ]]; then
 else
     precmd_functions+=(prompt_default)
 fi 
+
+# History
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
