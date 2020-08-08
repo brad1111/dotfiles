@@ -6,6 +6,9 @@ fi
 if [ -e "$HOME/.cargo/bin" ]; then
 	PATH="$HOME/.cargo/bin:$PATH"
 fi
+if [ -e "$HOME/.local/bin" ]; then
+	PATH="$HOME/.local/bin:$PATH"
+fi
 
 export EDITOR=nvim
 alias vim=nvim
