@@ -4,7 +4,7 @@ promptinit
 
 plugins=(git)
 #Setup config file sync
-alias cfg='/usr/bin/git --git-dir=$HOME/src/archconfig --work-tree=$HOME'
+alias cfg='/usr/bin/git --git-dir=$HOME/src/dotfiles --work-tree=$HOME'
 
 
 #setup powerline
