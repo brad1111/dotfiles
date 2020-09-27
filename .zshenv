@@ -13,3 +13,4 @@ fi
 export EDITOR=nvim
 alias vim=nvim
 alias vi=vim
+alias hc=herbstclient
