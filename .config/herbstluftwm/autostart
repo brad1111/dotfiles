@@ -27,7 +27,7 @@ Mod=Mod4   # Use the super key as the main modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind F12 spawn zsh --exec ~/.config/herbstluftwm/xfce4-drop-down-herbstluftwm.sh 
+hc keybind F12 spawn tdrop -ma -y 30 -x 4 xfce4-terminal 
 hc keybind $Mod-F12 spawn xfce4-terminal # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn rofi -show drun
 hc keybind $Mod-Tab spawn rofi -show windowcd 
