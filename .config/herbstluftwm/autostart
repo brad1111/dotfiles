@@ -177,5 +177,10 @@ for monitor in $(hc list_monitors | cut -d: -f1) ; do
     "$panel" $monitor &
 done
 
+# Application rules
+hc rule class=discord tag=3.
+hc rule class=Spotify tag=4.
+hc rule class=Firefox tag=2.爵
+
 picom  &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
