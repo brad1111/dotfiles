@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # this is a simple config for herbstluftwm
+DEFAULT_BACKGROUND=$HOME/linux-background.png
 
 hc() {
     herbstclient "$@"
@@ -31,6 +32,16 @@ hc keybind F12 spawn tdrop -ma -y 30 -x 4 xfce4-terminal
 hc keybind $Mod-F12 spawn xfce4-terminal # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn rofi -show drun
 hc keybind $Mod-Tab spawn rofi -show windowcd 
+
+# Audio player keybinds
+hc keybind XF86AudioLowerVolume spawn pactl set-sink-volume 0 -5%
+hc keybind XF86AudioRaiseVolume spawn pactl set-sink-volume 0 +5%
+hc keybind XF86AudioMute spawn pactl set-sink-mute 0 toggle
+hc keybind XF86AudioPlay spawn playerctl play-pause
+hc keybind XF86Forward spawn playerctl next
+hc keybind XF86Back spawn playerctl previous
+
+# Brightness controls
 
 # basic movement
 # focusing clients
@@ -82,7 +93,7 @@ for i in ${!tag_names[@]} ; do
     if [ "$key" -eq 4 ]; then
 	    BACKGROUND=$HOME/.cache/background-fm/out.png
     else
-	    BACKGROUND=$HOME/linux-background.png
+	    BACKGROUND=$DEFAULT_BACKGROUND
     fi
     if ! [ -z "$key" ] ; then
         hc keybind "$Mod-$key" chain . use_index "$i" . spawn feh --bg-tile $BACKGROUND
@@ -191,3 +202,4 @@ picom  &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 discord &
 nm-applet &
+feh --bg-tile $DEFAULT_BACKGROUND 
