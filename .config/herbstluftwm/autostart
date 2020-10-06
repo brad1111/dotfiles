@@ -41,7 +41,9 @@ hc keybind XF86AudioPlay spawn playerctl play-pause
 hc keybind XF86Forward spawn playerctl next
 hc keybind XF86Back spawn playerctl previous
 
-# Brightness controls
+# Misc keybinds
+hc keybind XF86PowerOff spawn $HOME/src/rofi-scripts/power.sh
+hc keybind XF86ScreenSaver spawn xset dpms force off
 
 # basic movement
 # focusing clients
@@ -203,3 +205,4 @@ picom  &
 discord &
 nm-applet &
 feh --bg-tile $DEFAULT_BACKGROUND 
+xfce4-power-manager
