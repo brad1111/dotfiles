@@ -126,6 +126,7 @@ hc mouseunbind --all
 hc mousebind $Mod-Button1 move
 hc mousebind $Mod-Button2 zoom
 hc mousebind $Mod-Button3 resize
+hc mousebind $Mod-Control-Button1 resize
 
 # focus
 hc keybind $Mod-BackSpace   cycle_monitor
