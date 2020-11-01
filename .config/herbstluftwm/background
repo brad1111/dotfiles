@@ -7,9 +7,10 @@ WALLPAPER=(
 )
 
 set_background(){
-    feh --bg-tile $WALL
+    feh --bg-tile $1
 }
 
+set_background ${WALLPAPER[0]}
 # background on tags (taken from https://gist.github.com/wdkrnls/b444ef77d450b7b0c24c934bba861760
 herbstclient --idle '(tag_changed|reload)' \
     | while read line; do
@@ -31,8 +32,8 @@ herbstclient --idle '(tag_changed|reload)' \
                 # Wallpaper for tag
                 WALL=${WALLPAPER[$TAG]}
             fi
-            set_background()
-            ;;
+            set_background $WALL
+            ;; 
         *) ;;
     esac
 done
