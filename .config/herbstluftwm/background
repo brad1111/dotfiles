@@ -1,0 +1,34 @@
+#!/bin/bash
+declare -A WALLPAPER
+WALLPAPER=(
+    #Default wallpaper
+    [0]=$HOME/linux-background.png
+    [4.]=$HOME/.cache/background-fm/out.png
+)
+
+# background on tags (taken from https://gist.github.com/wdkrnls/b444ef77d450b7b0c24c934bba861760
+herbstclient --idle '(tag_changed|reload)' \
+    | while read line; do
+    ARGS=($line)
+    HOOK=${ARGS[0]}
+    TAG=${ARGS[1]}
+    case $HOOK in
+        reload)
+            exit 1
+            ;;
+        quit_panel)
+            exit 1
+            ;;
+        tag_changed)
+            if [ -z "${WALLPAPER[$TAG]}" ]; then
+                # No wallpaper for tag
+                WALL=${WALLPAPER[0]}
+            else
+                # Wallpaper for tag
+                WALL=${WALLPAPER[$TAG]}
+            fi
+            feh --bg-tile $WALL
+            ;;
+        *) ;;
+    esac
+done

@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # this is a simple config for herbstluftwm
-DEFAULT_BACKGROUND=$HOME/linux-background.png
 
 hc() {
     herbstclient "$@"
@@ -92,15 +91,16 @@ hc rename default "${tag_names[0]}" || true
 for i in ${!tag_names[@]} ; do
     hc add "${tag_names[$i]}"
     key="${tag_keys[$i]}"
-    if [ "$key" -eq 4 ]; then
-	    BACKGROUND=$HOME/.cache/background-fm/out.png
-    else
-	    BACKGROUND=$DEFAULT_BACKGROUND
-    fi
-    if ! [ -z "$key" ] ; then
-        hc keybind "$Mod-$key" chain . use_index "$i" . spawn feh --bg-tile $BACKGROUND
-        hc keybind "$Mod-Shift-$key" move_index "$i"
-    fi
+#   if [ "$key" -eq 4 ]; then
+#     BACKGROUND=$HOME/.cache/background-fm/out.png
+#   else
+#     BACKGROUND=$DEFAULT_BACKGROUND
+#   fi
+   if ! [ -z "$key" ] ; then
+#      hc keybind "$Mod-$key" chain . use_index "$i" . spawn feh --bg-tile $BACKGROUND
+       hc keybind "$Mod-$key" use_index "$i"
+       hc keybind "$Mod-Shift-$key" move_index "$i"
+   fi
 done
 
 # cycle through tags
@@ -205,5 +205,5 @@ picom  &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 discord &
 nm-applet &
-feh --bg-tile $DEFAULT_BACKGROUND 
+$HOME/.config/herbstluftwm/background &
 xfce4-power-manager
