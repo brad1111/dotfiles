@@ -109,10 +109,16 @@ mailboxes "="
 mailboxes "=Lists"
   
 # mailing lists for a Gentoo user (these are regexps!)
-subscribe "gentoo-.*@gentoo\\.org"
+#subscribe "gentoo-.*@gentoo\\.org"
+
   
 # SMTP mailing configuration (for sending mail)
 set smtp_url=smtps://$imap_user@smtp.migadu.com
 set smtp_pass = $imap_pass
 set ssl_force_tls = yes
 #set smtp_authenticators = "login"
+
+
+# gmail main
+source "$HOME/.config/neomutt/mail-thebrad"
+

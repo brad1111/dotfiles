@@ -1,0 +1,18 @@
+## Recieve
+set imap_user=mail.thebradad1111@gmail.com
+source "$HOME/src/mutt-keyring/mutt-keyring.py get $imap_user |"
+set folder = imaps://imap.gmail.com/
+set spoolfile = +INBOX
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set trash="+[Gmail]/Trash"
+
+## Send
+set smtp_url=smtps://${imap_user}@smtp.gmail.com
+set realname="Bradley Eaton gmail"
+set from=$imap_user
+set hostname="gmail.com"
+set ssl_force_tls=yes
+unset ssl_starttls
+
+account-hook $folder "set imap_user=${imap_user} imap_pass=${imap_pass}"
