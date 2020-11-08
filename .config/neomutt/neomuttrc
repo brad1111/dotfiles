@@ -56,6 +56,7 @@ color progress    white          black
 # personality settings
 set realname = "Bradley Eaton"
 set from = "bradley@bradleyeaton.com"
+set use_from = yes
 #alternates "larry@mail.server|larry.the.cow@mail.server"
 # this file must exist, and contains your signature, comment it out if
 # you don't want a signature to be used
@@ -67,13 +68,20 @@ source ~/.aliases
 # IMAP connection settings
 set mail_check=60
 set imap_keepalive=300
-  
+
+
 # IMAP account settings
 set folder=imaps://imap.migadu.com/
+set imap_user=bradley@bradleyeaton.com
 set spoolfile=+INBOX
-set record=+SENT
+set record=+Sent
 set postponed=+Drafts
-  
+set imap_check_subscribed
+unset imap_passive  
+
+# get password
+source "$HOME/src/mutt-keyring/mutt-keyring.py get $imap_user |"
+
 # use headercache for IMAP (make sure this is a directory for better performance!)
 set header_cache=/var/tmp/.mutt
  
@@ -104,4 +112,7 @@ mailboxes "=Lists"
 subscribe "gentoo-.*@gentoo\\.org"
   
 # SMTP mailing configuration (for sending mail)
-set smtp_url=smtp://larry@mail.server/
+set smtp_url=smtps://$imap_user@smtp.migadu.com
+set smtp_pass = $imap_pass
+set ssl_force_tls = yes
+#set smtp_authenticators = "login"
