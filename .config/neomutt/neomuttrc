@@ -63,7 +63,7 @@ set use_from = yes
 #set signature = ~/.signature
   
 # aliases (sort of address book)
-source ~/.aliases
+#source ~/.aliases
   
 # IMAP connection settings
 set mail_check=60
@@ -122,3 +122,8 @@ set ssl_force_tls = yes
 # gmail main
 source "$HOME/.config/neomutt/mail-thebrad"
 
+# uni
+#source "$HOME/.config/neomutt/uni"
+
+# msn
+source "$HOME/.config/neomutt/msn"

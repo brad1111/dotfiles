@@ -1,0 +1,19 @@
+## Recieve
+set imap_user="bradleyandrew10@msn.com"
+source "$HOME/src/mutt-keyring/mutt-keyring.py get $imap_user |"
+set folder = imaps://imap-mail.outlook.com
+set spoolfile = +INBOX
+set record = "+Sent Mail"
+set postponed = "+Drafts"
+set trash="+Deleted Items"
+
+## Send
+set smtp_url=smtps://${imap_user}@smtp-mail.outlook.com
+set realname="Bradley Eaton"
+set from=$imap_user
+#set hostname=$my_domain
+set ssl_force_tls=yes
+set ssl_starttls=yes
+#unset ssl_starttls
+
+account-hook $folder "set imap_user=${imap_user} imap_pass=${imap_pass}"
