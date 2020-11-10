@@ -1,0 +1,7 @@
+#/usr/bin/env bash
+
+davmail 2>&1 > /tmp/davmail.log &
+DAVMAIL=$!
+neomutt $1
+
+kill -INT $DAVMAIL
