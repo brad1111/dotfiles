@@ -6,6 +6,7 @@ set spoolfile = +INBOX
 set record = "+Sent Mail"
 set postponed = "+Drafts"
 set trash="+Deleted Items"
+mailboxes !
 
 ## Send
 set smtp_url=smtps://${imap_user}@smtp-mail.outlook.com
