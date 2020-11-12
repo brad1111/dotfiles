@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Power Menu
+Comment=
+Exec=/home/bradley/src/rofi-scripts/power.sh
+Icon=system-shutdown
+Path=
+Terminal=false
+StartupNotify=false
