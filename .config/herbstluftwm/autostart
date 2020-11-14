@@ -207,4 +207,5 @@ picom  &
 discord &
 nm-applet &
 $HOME/.config/herbstluftwm/background &
+$HOME/.config/herbstluftwm/wacom.sh
 xfce4-power-manager
