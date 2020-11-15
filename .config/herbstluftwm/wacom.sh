@@ -15,3 +15,4 @@ if [[ -z "$STYLUS" ]]; then
 fi
 
 xsetwacom --set "$STYLUS" Button 2 Pan
+xsetwacom --set "$STYLUS" PanScrollThreshold 200
