@@ -4,3 +4,4 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 call plug#end()
 set tabstop=2 shiftwidth=4 expandtab
+set statusline^=%{coc#status()}
