@@ -209,3 +209,4 @@ nm-applet &
 $HOME/.config/herbstluftwm/background &
 $HOME/.config/herbstluftwm/wacom.sh
 xfce4-power-manager
+/usr/lib64/xfce4/notifyd/xfce4-notifyd &
