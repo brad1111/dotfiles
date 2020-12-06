@@ -1,7 +1,14 @@
 #/usr/bin/env bash
+TMPDIR="/tmp/davmail"
+if [ ! -d $TMPDIR ]; then 
+    mkdir $TMPDIR
+fi
 
-davmail 2>&1 > /tmp/davmail.log &
+pushd $TMPDIR > /dev/null
+davmail ~/.config/davmail/davmail.properties 2>&1 > /tmp/davmail/stdoutandstderr.log &
 DAVMAIL=$!
+popd > /dev/null
+
 neomutt $1
 
 kill -INT $DAVMAIL
