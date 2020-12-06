@@ -99,17 +99,17 @@ set pgp_replyencrypt = yes
 
 
 # migadu
-source "$HOME/.config/neomutt/migadu"
-folder-hook $folder 'source $HOME/.config/neomutt/migadu'
+source "$HOME/.config/neomutt/accounts/migadu"
+folder-hook $folder 'source $HOME/.config/neomutt/accounts/migadu'
 # gmail main
-source "$HOME/.config/neomutt/mail-thebrad"
-folder-hook $folder 'source $HOME/.config/neomutt/mail-thebrad'
+source "$HOME/.config/neomutt/accounts/mail-thebrad"
+folder-hook $folder 'source $HOME/.config/neomutt/accounts/mail-thebrad'
 
 # msn
-source "$HOME/.config/neomutt/msn"
-folder-hook $folder 'source $HOME/.config/neomutt/msn'
+source "$HOME/.config/neomutt/accounts/msn"
+folder-hook $folder 'source $HOME/.config/neomutt/accounts/msn'
 
 # uni
-source "$HOME/.config/neomutt/uni"
-folder-hook $folder 'source $HOME/.config/neomutt/uni'
+source "$HOME/.config/neomutt/accounts/uni"
+folder-hook $folder 'source $HOME/.config/neomutt/accounts/uni'
 

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+#check secret-tool is installed
+if ! command -v secret-tool &> /dev/null; then
+    echo "Error: secret-tool not found, please install libsecret"
+    exit 1
+fi
+
+email_addresses=($(grep "imap_user=" ~/.config/neomutt/accounts/* -h | grep -v account-hook | grep -v "^#" | sed 's/^set imap_user=//g'))
+
+for email in "${email_addresses[@]}"
+do
+    echo "Please enter password for email: $email"
+    secret-tool store --label=mutt muttemail "$email"
+done

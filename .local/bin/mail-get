@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+    echo Please enter an email &>1
+    exit 1
+fi
+
+echo "set imap_pass=$(secret-tool lookup muttemail "$1")"
