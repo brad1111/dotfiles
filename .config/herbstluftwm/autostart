@@ -197,17 +197,16 @@ for monitor in $(hc list_monitors | cut -d: -f1) ; do
 done
 
 # Application rules
-#hc rule class~"exe$" tag=5.
+hc rule class~"exe$" tag=5.
 hc rule class=discord tag=3.
 hc rule class=Spotify tag=4. pseudotile=on
 hc rule class=Firefox tag=2.爵
 hc rule class=Gcr-prompter floating=on
 hc rule class=Notion tag=1. 
-hc rule class=Steam tag=5.
-hc rule class=steam.exe tag=5.
-hc rule class=Lutris tag=5.
-hc rule class=Wine tag=5.
-hc rule tag=5. floating=on
+hc rule class=Steam tag=5. floating=on
+hc rule class=steam.exe tag=5. floating=on
+hc rule class=Lutris tag=5. floating=on
+hc rule class=Wine tag=5. floating=on
 
 picom  &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
