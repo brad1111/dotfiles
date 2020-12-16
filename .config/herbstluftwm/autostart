@@ -205,6 +205,7 @@ hc rule class=Gcr-prompter floating=on
 hc rule class=Notion tag=1. 
 hc rule class=Steam tag=5. floating=on
 hc rule class=steam.exe tag=5. floating=on
+hc rule class=steamwebhelper.exe tag=5. floating=on
 hc rule class=Lutris tag=5. floating=on
 hc rule class=Wine tag=5. floating=on
 
