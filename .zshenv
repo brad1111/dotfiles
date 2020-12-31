@@ -14,3 +14,6 @@ export EDITOR=nvim
 alias vim=nvim
 alias vi=vim
 alias hc=herbstclient
+if [ -e "$HOME/.cargo/env" ]; then
+    source "$HOME/.cargo/env"
+fi
