@@ -204,6 +204,7 @@ hc rule class=Firefox tag=2.爵
 hc rule class=Gcr-prompter floating=on
 hc rule class=Notion tag=1. 
 hc rule class=Steam tag=5. floating=on
+hc rule title=steam tag=5. 
 hc rule class=steam.exe tag=5. floating=on
 hc rule class=steamwebhelper.exe tag=5. floating=on
 hc rule class=Lutris tag=5. floating=on
