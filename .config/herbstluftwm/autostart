@@ -44,6 +44,9 @@ hc keybind XF86Back spawn playerctl previous
 # Misc keybinds
 hc keybind XF86PowerOff spawn $HOME/src/rofi-scripts/power.sh
 hc keybind XF86ScreenSaver spawn xset dpms force off
+hc keybind Print spawn $HOME/.local/bin/clipscreen -s
+hc keybind Shift-Print spawn $HOME/.local/bin/clipscreen
+
 
 # basic movement
 # focusing clients

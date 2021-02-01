@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+maim $1 | xclip -selection clipboard -t image/png -i > /tmp/clipscreen.log
+
+if [[ $? == 0 ]]; then
+    notify-send "Screenshot copied to clipboard"
+else
+    notify-send "Screenshot failed. Log can be found in /tmp/clipscreen.log"
+fi
