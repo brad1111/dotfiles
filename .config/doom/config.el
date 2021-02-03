@@ -55,3 +55,6 @@
 
 ;; disable clipboard saving
 (setq x-select-enable-clipboard-manager nil)
+
+;;enable inline images always
+(setq org-startup-with-inline-images t)

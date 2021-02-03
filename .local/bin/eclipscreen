@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
+
+# this is some horrible code look at clipscrean for some nicer stuff
 echo ----- >> /tmp/clipscreen.log
 echo emacs - $(date +%Y%m%d-%H%M%S) >> /tmp/clipscreen.log
 echo "\$1=$1" >> /tmp/clipscreen.log
+
+
+# check for emacs server
+if [ ! -f "/var/run/user/$(id -u $(whoami))/emacs" ]; then
+    notify-send "Emacs server not running"
+    exit 
+fi
+
 BUFFERDIR=$(emacsclient --eval '(with-current-buffer (window-buffer (selected-window)) (buffer-file-name))' | sed 's/"//g' | xargs dirname)
 echo "\$BUFFERDIR=$BUFFERDIR" >> /tmp/clipscreen.log
 FILE=$HOME/org/images/screenshot-$(date +%Y%m%d-%H%M%S).png
