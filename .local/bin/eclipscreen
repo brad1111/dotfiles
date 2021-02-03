@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+echo ----- >> /tmp/clipscreen.log
+echo emacs - $(date +%Y%m%d-%H%M%S) >> /tmp/clipscreen.log
+echo "\$1=$1" >> /tmp/clipscreen.log
+BUFFERDIR=$(emacsclient --eval '(with-current-buffer (window-buffer (selected-window)) (buffer-file-name))' | sed 's/"//g' | xargs dirname)
+echo "\$BUFFERDIR=$BUFFERDIR" >> /tmp/clipscreen.log
+FILE=$HOME/org/images/screenshot-$(date +%Y%m%d-%H%M%S).png
+echo "\$FILE=$FILE" >> /tmp/clipscreen.log
+maim $1 $FILE 2>&1 >> /tmp/clipscreen.log
+if [[ $? != 0 ]]; then
+    notify-send "Emacs screenshot failed. Log can be found in /tmp/clipscreen.log"
+fi
+RELPATH=$(realpath --relative-to=$BUFFERDIR $FILE)
+echo "\$RELPATH=$RELPATH" >> /tmp/clipscreen.log
+echo "[[${RELPATH}]]" | xclip -selection clipboard
+if [[ $? == 0 ]]; then
+    notify-send "Emacs screenshot copied to clipboard"
+fi
