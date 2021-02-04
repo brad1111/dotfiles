@@ -7,7 +7,7 @@ echo "\$1=$1" >> /tmp/clipscreen.log
 
 
 # check for emacs server
-if [ ! -f "/var/run/user/$(id -u $(whoami))/emacs" ]; then
+if [ ! -S "/var/run/user/$(id -u $(whoami))/emacs/server" ]; then
     notify-send "Emacs server not running"
     exit 
 fi
