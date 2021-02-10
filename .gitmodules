@@ -1,0 +1,3 @@
+[submodule "/home/bradley/.config/doom"]
+	path = /home/bradley/.config/doom
+	url = git@github.com:thebradad1111/doom-config.git
