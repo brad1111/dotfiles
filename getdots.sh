@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-DOTSURL=git@github.com/brad1111/dotfiles
+DOTSURL=git@github.com:brad1111/dotfiles
 
 # check if git exists
 if ! type git > /dev/null; then
     echo "Please install git"
-    return
+    exit
 fi
 
 if ! type ssh-keygen > /dev/null; then
     echo "Please install openssh"
-    return
+    exit
 fi
 
 ssh git@github.com 2>&1 | grep Hi
@@ -19,13 +19,13 @@ if [[ $? != 0 ]]; then
         cat "$HOME/id_rsa.pub"
     else 
         echo "Generating key with ssh-keygen"
-        ssh-keygen -f "$HOME/id_rsa"
+        ssh-keygen -f "$HOME/.ssh/id_rsa"
         echo "SSH key to copy:"
-        cat "$HOME/id_rsa.pub"
+        cat "$HOME/.ssh/id_rsa.pub"
     fi
-    return
+    exit
 fi
 
 mkdir -p "$HOME/src"
 git clone --bare "$DOTSURL" "$HOME/src/dotfiles"
-git checkout --git-dir="$HOME/src/dotfiles" --work-tree="$HOME"
+git --git-dir="$HOME/src/dotfiles" --work-tree="$HOME" checkout
