@@ -22,7 +22,8 @@ if [[ $? != 0 ]]; then
 fi
 RELPATH=$(realpath --relative-to=$BUFFERDIR $FILE)
 echo "\$RELPATH=$RELPATH" >> /tmp/clipscreen.log
-echo "[[${RELPATH}]]" | xclip -selection clipboard
+# echo "[[${RELPATH}]]" | xclip -selection clipboard
+echo "(kill-new \"[[${RELPATH}]]\")" | emacsclient -e # (kill-new "blah") copies to emacs clipboard
 if [[ $? == 0 ]]; then
-    notify-send "Emacs screenshot copied to clipboard"
+    notify-send "Emacs screenshot copied to emacs clipboard"
 fi
