@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+HERBSTLUFT_ON_CORRECT_TAG_FILE="/tmp/background-media/herbstluft"
+
 load_media_background(){
     "$HOME/src/background-fm/background-media-chooser.sh"
-    touch "$HOME/.cache/background-media/.herbstluft"
-    while [[ -f "$HOME/.cache/background-media/.herbstluft" ]]; do
-        inotifywait -e close_write -e delete "$HOME/.cache/background-media/.herbstluft" "$HOME/.cache/background-media/"
+    touch "${HERBSTLUFT_ON_CORRECT_TAG_FILE}" 
+    while [[ -f "${HERBSTLUFT_ON_CORRECT_TAG_FILE}" ]]; do
+        inotifywait -e close_write -e delete "/tmp/background-media/" "$HOME/.cache/background-media"
         echo updating background
         if [[ $(herbstclient get_attr tags.focus.name) == "4." ]]; then
             "$HOME/src/background-fm/background-media-chooser.sh"
@@ -17,8 +19,8 @@ set_background(){
 }
 load_standard_background(){
     set_background "$HOME/linux-background.png"
-    if [[ -f "$HOME/.cache/background-media/.herbstluft" ]]; then
-        rm "$HOME/.cache/background-media/.herbstluft"
+    if [[ -f "${HERBSTLUFT_ON_CORRECT_TAG_FILE}" ]]; then
+        rm "${HERBSTLUFT_ON_CORRECT_TAG_FILE}"
     fi
 }
 declare -A WALLPAPER
