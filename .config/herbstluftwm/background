@@ -1,18 +1,38 @@
-#!/bin/bash
-declare -A WALLPAPER
-WALLPAPER=(
-    #Default wallpaper
-    [0]=$HOME/linux-background.png
-    [4.]=$HOME/.cache/background-fm/out.png
-)
+#!/usr/bin/env bash
+
+load_media_background(){
+    "$HOME/src/background-fm/background-media-chooser.sh"
+    touch "$HOME/.cache/background-media/.herbstluft"
+    while [[ -f "$HOME/.cache/background-media/.herbstluft" ]]; do
+        inotifywait -e close_write -e delete "$HOME/.cache/background-media/.herbstluft" "$HOME/.cache/background-media/"
+        echo updating background
+        if [[ $(herbstclient get_attr tags.focus.name) == "4." ]]; then
+            "$HOME/src/background-fm/background-media-chooser.sh"
+        fi
+    done
+}
 
 set_background(){
     feh --bg-tile $1
 }
+load_standard_background(){
+    set_background "$HOME/linux-background.png"
+    if [[ -f "$HOME/.cache/background-media/.herbstluft" ]]; then
+        rm "$HOME/.cache/background-media/.herbstluft"
+    fi
+}
+declare -A WALLPAPER
+WALLPAPER=(
+    #Default wallpaper
+    [0]=load_standard_background
+    [4.]=load_media_background
+)
 
-set_background ${WALLPAPER[0]}
+
+
+${WALLPAPER[0]}
 # background on tags (taken from https://gist.github.com/wdkrnls/b444ef77d450b7b0c24c934bba861760
-herbstclient --idle '(tag_changed|reload)' \
+herbstclient --idle '(tag_changed|quit_panel|reload)' \
     | while read line; do
     ARGS=($line)
     HOOK=${ARGS[0]}
@@ -32,7 +52,7 @@ herbstclient --idle '(tag_changed|reload)' \
                 # Wallpaper for tag
                 WALL=${WALLPAPER[$TAG]}
             fi
-            set_background $WALL
+            $WALL &
             ;; 
         *) ;;
     esac
