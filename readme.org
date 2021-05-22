@@ -1,0 +1,64 @@
+#+TITLE: Bradley's Dotfiles
+* Getting dotfiles
+** Using curl
+#+begin_src bash
+curl https://raw.githubusercontent.com/brad1111/dotfiles/master/getdots.sh | bash
+#+end_src
+** Using Wget
+#+begin_src bash
+wget https://raw.githubusercontent.com/brad1111/dotfiles/master/getdots.sh
+chmod +x getdots.sh
+./getdots.sh
+#+end_src
+* Configs included
+- davmail
+  + to use run =davmail ~/.config/davmail/davmail.properties=
+- doom emacs
+- gpg
+- gtk2/gtk3
+- herbstluftwm
+  + dependencies
+    - =background-fm=: for background media script: [[https://github.com/brad1111/background-fm][background-media]]
+    - =discord=: to autostart
+    - =feh=: for displaying background
+    - =gnome-keyring=
+    - =inotify-tools=: for background media script
+    - =nm-applet=: for network management
+    - =playerctl=: for play/pause next/back
+    - =pulseaudio=: for audio control
+    - =rofi=: for application launcher
+      + and my [[https://www.github.com/brad1111/rofi-scripts][rofi-scripts]] repo, for other scripts
+    - =tdrop=: drop-down terminal
+    - =xf86-input-wacom=: for wacom script
+    - =xfce4-clipman=: for clipboard management
+    - =xfce4-notifyd=: for notifications
+    - =xfce4-panel=: for panel
+    - =xfce4-power-manager=: for battery status
+    - =xfce4-terminal=: terminal
+    - =xset=: for sleep
+  + you also need to symlink either =local-desktop-home= or =local-laptop= to =local=
+- neovim
+  + setup [[https://github.com/junegunn/vim-plug][vim-plug]]
+- newsboat
+- picom
+  + to setup symlink either =picom.conf.nvidia= or =picom.conf.sane=
+- rofi
+- shell
+  + .bashrc
+  + zsh
+    - requires =powerline-rs= for fancy output
+  + .profile
+- xfce
+* Scripts included
+- clipscreen
+  + takes a screenshot and copies to clipboard
+  + requires
+    - =libnotify=
+    - =maim=
+    - =xclip=
+- eclipscreen
+  + takes a screenshot and saves file to ~/org/images, and copies a relative org hyperlink to the file to emacs' clipboard (even works where emacs is running under a seperate remote X11)
+  + requires
+    - =emacs=
+    - =libnotify=
+    - =maim=
