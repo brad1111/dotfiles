@@ -18,7 +18,7 @@ set_background(){
     feh --bg-tile $1
 }
 load_standard_background(){
-    set_background "$HOME/linux-background.png"
+    set_background "$HOME/.local/share/backgrounds/linux-background.png"
     if [[ -f "${HERBSTLUFT_ON_CORRECT_TAG_FILE}" ]]; then
         rm "${HERBSTLUFT_ON_CORRECT_TAG_FILE}"
     fi
