@@ -28,7 +28,7 @@ SndMod=Mod1 #secondary modifier
 hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
-hc keybind F12 spawn tdrop -ma -y 30 -x 4 xfce4-terminal 
+hc keybind F12 spawn tdrop -ma --class Xfce4-terminal -y 30 -x 4 xfce4-terminal 
 hc keybind $Mod-F12 spawn xfce4-terminal # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn rofi -show drun
 hc keybind $Mod-Shift-Return spawn ~/src/rofi-scripts/uni.sh
