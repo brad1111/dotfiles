@@ -58,3 +58,16 @@
 
 ;;enable inline images always
 (setq org-startup-with-inline-images t)
+
+
+;; enable org-ref
+(require 'org-ref)
+
+;;enable org-ref latex export
+(setq org-latex-pdf-process
+      '(
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        "bibtex %b"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"
+        ))
