@@ -14,6 +14,7 @@ export EDITOR=nvim
 alias vim=nvim
 alias vi=vim
 alias hc=herbstclient
+alias irssi="irssi --home=~/.config/irssi"
 if [ -e "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
