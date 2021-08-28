@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-xrandr --output HDMI-0 --auto --left-of DP-2 --auto
+xrandr --output HDMI-1 --auto --left-of DP-2 --auto
 xsetwacom --set "Wacom Intuos PT S 2 Pen stylus" MapToOutput HEAD-1
