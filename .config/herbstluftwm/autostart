@@ -218,7 +218,7 @@ hc rule class=Wine tag=5. floating=on
 
 picom  &
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-discord &
+discord --no-sandbox &
 nm-applet &
 $HOME/.config/herbstluftwm/background &
 $HOME/.config/herbstluftwm/wacom.sh

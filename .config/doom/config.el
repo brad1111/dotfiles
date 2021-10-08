@@ -71,3 +71,14 @@
         "pdflatex -interaction nonstopmode -output-directory %o %f"
         "pdflatex -interaction nonstopmode -output-directory %o %f"
         ))
+
+;;add cargo to path
+(let ((path (shell-command-to-string ". ~/.zshenv; echo -n $PATH")))
+  (setenv "PATH" path)
+  (setq exec-path
+        (append
+         (split-string-and-unquote path ":")
+         )))
+
+;;set environment variable for RUST_SRC_PATH
+(setenv "RUST_SRC_PATH" "/home/bradley/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/")
