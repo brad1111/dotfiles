@@ -18,3 +18,6 @@ alias irssi="irssi --home=~/.config/irssi"
 if [ -e "$HOME/.cargo/env" ]; then
     source "$HOME/.cargo/env"
 fi
+
+source ~/.profile
+SSH_ASKPASS=gnome-keyring

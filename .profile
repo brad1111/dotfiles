@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 test -z "$PROFILEREAD" && . /etc/profile || true
 XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CONFIG_HOME
@@ -17,7 +18,7 @@ fi
 export GTK_MODULES
 export UBUNTU_MENUPROXY
 
-# gnome keyring
-eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-export SSH_AUTH_SOCK
+## gnome keyring
+#eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+#export SSH_AUTH_SOCK
 
