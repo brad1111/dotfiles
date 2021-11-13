@@ -64,13 +64,21 @@
 (require 'org-ref)
 
 ;;enable org-ref latex export
-(setq org-latex-pdf-process
-      '(
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        "bibtex %b"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        "pdflatex -interaction nonstopmode -output-directory %o %f"
-        ))
+;;(setq org-latex-pdf-process
+;;      ( list
+;;        "pdflatex -interaction nonstopmode -output-directory %o %f"
+;;        "bibtex %b"
+;;        "pdflatex -interaction nonstopmode -output-directory %o %f"
+;;        "pdflatex -interaction nonstopmode -output-directory %o %f"
+;;        ))
+;;
+;;
+
+;; use biblatex instead of bibtex
+(setq bibtex-dialect 'biblatex)
+
+;; setup the export process
+(setq org-latex-pdf-process '("latexmk -shell-escape -bibtex -pdf %f"))
 
 ;;add cargo to path
 (let ((path (shell-command-to-string ". ~/.zshenv; echo -n $PATH")))
@@ -81,4 +89,4 @@
          )))
 
 ;;set environment variable for RUST_SRC_PATH
-(setenv "RUST_SRC_PATH" "/home/bradley/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/")
+(setenv "RUST_SRC_PATH" "/home/bradley/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library")
