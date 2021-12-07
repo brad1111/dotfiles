@@ -8,6 +8,7 @@
  '(custom-safe-themes
    '("d268b67e0935b9ebc427cad88ded41e875abfcc27abd409726a92e55459e0d01" "5784d048e5a985627520beb8a101561b502a191b52fa401139f4dd20acb07607" "e8df30cd7fb42e56a4efc585540a2e63b0c6eeb9f4dc053373e05d774332fc13" "da186cce19b5aed3f6a2316845583dbee76aea9255ea0da857d1c058ff003546" "7a7b1d475b42c1a0b61f3b1d1225dd249ffa1abb1b7f726aec59ac7ca3bf4dae" default))
  '(delete-selection-mode nil)
+ '(elfeed-feeds '("https://github.com/jD91mZM2/powerline-rs/releases.atom"))
  '(exwm-floating-border-color "#d3c5a0")
  '(fci-rule-color "#504945")
  '(highlight-tail-colors ((("#eee4b4" "#f3f3c1") . 0) (("#e8e5bb" "#eff3cf") . 20)))
